@@ -21,10 +21,8 @@ with app.app_context():
     print("Creating pizzas...")
 
     cheese = Pizza(name="Emma", ingredients="Dough, Tomato Sauce, Cheese")
-    pepperoni = Pizza(
-        name="Geri", ingredients="Dough, Tomato Sauce, Cheese, Pepperoni")
-    california = Pizza(
-        name="Melanie", ingredients="Dough, Sauce, Ricotta, Red peppers, Mustard")
+    pepperoni = Pizza(name="Geri", ingredients="Dough, Tomato Sauce, Cheese, Pepperoni")
+    california = Pizza(name="Melanie", ingredients="Dough, Sauce, Ricotta, Red peppers, Mustard")
     pizzas = [cheese, pepperoni, california]
 
     print("Creating RestaurantPizza...")
@@ -33,6 +31,7 @@ with app.app_context():
     pr2 = RestaurantPizza(restaurant=bistro, pizza=pepperoni, price=4)
     pr3 = RestaurantPizza(restaurant=palace, pizza=california, price=5)
     restaurantPizzas = [pr1, pr2, pr3]
+    
     db.session.add_all(restaurants)
     db.session.add_all(pizzas)
     db.session.add_all(restaurantPizzas)
